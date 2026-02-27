@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- <meta charset="UTF-8" /> -->
+  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+  <title>cube</title>
+</head>
+
+<body>
+  <h1 id="test">Cubic Solver</h1>
+  <form name="theform" >
+
+
+<label for="a">a-vaule:</label> <input type="number" id="a" name="a" required></input> 
+<br></br>
+<label for="b">b-vaule:</label> <input type="number" id="b" name="b" required></input> 
+<br></br>
+<label for="c">c-vaule:</label> <input type="number" id="c" name="c" required></input> 
+<br></br>
+<label for="d">d-vaule:</label> <input type="number" id="d" name="d" required></input>
+<br></br>
+<input type="submit" onclick="solve()"></input>
+</form>
+
+
+  <h3 id="answer"></h3>  
+  
+ 
+  <!-- 
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script> -->
+<br></br>
+  
+    <br></br>
+    <table>
+      <th>p</th>
+      <th>q</th>
+      <th>discriminate</th>
+      <th>root 1</th>
+      <th>root 2</th>
+      <th>root 3</th>
+    </table>
+    <canvas id="graph" height="100" width="100"> </canvas>
+</body>
+
+</html>
