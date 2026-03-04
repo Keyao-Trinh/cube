@@ -13,7 +13,7 @@ form?.addEventListener("submit", (event) => {
     let roottwo: number;
     let rootone: number;
     // function solve(a: number, b: number, c: number, d: number) {
- 
+
     const p = ((3 * a * c) - (b * b)) / (3 * a * a);
     const q = (((27 * a * a * d) - (9 * a * b * c) + (2 * b * b * b)) / (27 * a * a * a));
 
@@ -21,19 +21,19 @@ form?.addEventListener("submit", (event) => {
     const dis: number = (((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))
     if (dis === 0) {
         if (p == 0) {
-             rootone = (Math.cbrt(((-1 * q) / 2) + (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) + (Math.cbrt(((-1 * q) / 2) - (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) - (b / 3 * a);
-roottwo = rootone;
-rootthree = rootone;
+            rootone = (Math.cbrt(((-1 * q) / 2) + (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) + (Math.cbrt(((-1 * q) / 2) - (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) - (b / 3 * a);
+            roottwo = rootone;
+            rootthree = rootone;
         } else {
-             rootone = (Math.cbrt(((-1 * q) / 2) + (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) + (Math.cbrt(((-1 * q) / 2) - (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) - (b / 3 * a);
-             roottwo = ((Math.cbrt(q / 2)) - (b / (3 * a)))
-             rootthree = rootone;
+            rootone = (Math.cbrt(((-1 * q) / 2) + (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) + (Math.cbrt(((-1 * q) / 2) - (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) - (b / 3 * a);
+            roottwo = ((Math.cbrt(q / 2)) - (b / (3 * a)))
+            rootthree = rootone;
         }
         let x = (Math.cbrt(((-1 * q) / 2) + (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) + (Math.cbrt(((-1 * q) / 2) - (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) - (b / 3 * a);
     } else {
         let theta = (1 / 3) * (Math.acos((-1 * q) / 2 * (Math.cbrt(-1 * ((q / 3) * (q / 3) * (q / 3))))));
-     rootone = (Math.cbrt(((-1 * q) / 2) + (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) + (Math.cbrt(((-1 * q) / 2) - (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) - (b / 3 * a);
-         roottwo = (p * (Math.sqrt((-1 * p) / 3))) * Math.cos(theta);
+        rootone = (Math.cbrt(((-1 * q) / 2) + (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) + (Math.cbrt(((-1 * q) / 2) - (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) - (b / 3 * a);
+        roottwo = (p * (Math.sqrt((-1 * p) / 3))) * Math.cos(theta);
         rootthree = (p * (Math.sqrt((-1 * p) / 3))) * Math.cos(theta + ((Math.PI * 2) / 3));
         // let rootthr = (p*(Math.sqrt((-1*p)/3)))*Math.cos(theta+((Math.PI*4)/3));
         //cube root unity
