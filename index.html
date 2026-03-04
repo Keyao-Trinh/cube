@@ -2,15 +2,16 @@
 <html lang="en">
 
 <head>
-  <!-- <meta charset="UTF-8" /> -->
-  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-  <title>cube</title>
+  <meta charset="UTF-8" />
+  <link href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="title">cube</title>
 </head>
 
 <body>
-  <h1 id="test">Cubic Solver</h1>
-  <form name="theform" >
+  <h1 id="test">Cubic Solver_</h1>
+  <form name="theform"  id="form">
+    <script src="src/script.ts"></script>
 
 
 <label for="a">a-vaule:</label> <input type="number" id="a" name="a" required></input> 
@@ -21,28 +22,36 @@
 <br></br>
 <label for="d">d-vaule:</label> <input type="number" id="d" name="d" required></input>
 <br></br>
-<input type="submit" onclick="solve()"></input>
+<input type="submit" onclick="solve()" vaule = "Calculate"/>
+
 </form>
 
 
   <h3 id="answer"></h3>  
-  
- 
-  <!-- 
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script> -->
+
 <br></br>
   
     <br></br>
     <table>
+      <tr>
       <th>p</th>
       <th>q</th>
       <th>discriminate</th>
       <th>root 1</th>
       <th>root 2</th>
       <th>root 3</th>
+      </tr>
+      <tr>
+        <td id = "p"></td>
+        <td id = "q"></td>
+        <td id = "dis"></td>
+        <td id = "rootone"></td>
+        <td id = "roottwo"></td>
+        <td id = "rootthree"></td>
+      </tr>
     </table>
     <canvas id="graph" height="100" width="100"> </canvas>
+
 </body>
 
 </html>
