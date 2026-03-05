@@ -79,6 +79,17 @@ form?.addEventListener("submit", (event) => {
     // (document.getElementById("dis") as HTMLInputElement).value = 'x=${dis}';
     // console.log("no refesh :O");
 
+    const canvas = document.getElementById("graph");
+// const ctx = canvas.getContext("2d");
+
+const graph = document.createElement("canvas");
+const ctx = graph.getContext("2d");
+
+ctx.beginPath();
+ctx.moveTo(0, 0);
+ctx.bezierCurveTo(rootone, 20, roottwo, 20, 100, 100)
+ctx.stroke();
+
 })
 
 
