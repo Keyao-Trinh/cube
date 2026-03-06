@@ -23,7 +23,7 @@ form?.addEventListener("submit", (event) => {
     const dis: number = (((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)));
     let disvaule = document.getElementById("dis") as HTMLElement;
            disvaule.innerText = String (dis);
-    if (dis === 0) {
+    if (dis == 0) {
         if (p == 0) {
             rootone = (Math.cbrt(((-1 * q) / 2) + (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) + (Math.cbrt(((-1 * q) / 2) - (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) - (b / 3 * a);
             roottwo = rootone;
@@ -79,15 +79,21 @@ form?.addEventListener("submit", (event) => {
     // (document.getElementById("dis") as HTMLInputElement).value = 'x=${dis}';
     // console.log("no refesh :O");
 
-    const canvas = document.getElementById("graph");
+    // const canvas = document.getElementById("graph");
 // const ctx = canvas.getContext("2d");
 
-const graph = document.createElement("canvas");
-const ctx = graph.getContext("2d");
+// const graph = document.createElement("graph");
+const graph = document.getElementById("graph") as HTMLCanvasElement;
+const ctx = graph.getContext('2d');
+
+if (!ctx) {
+  console.error('Canvas context is null. Cannot proceed.');
+  return; // googled answer
+}
 
 ctx.beginPath();
 ctx.moveTo(0, 0);
-ctx.bezierCurveTo(rootone, 20, roottwo, 20, 100, 100)
+ctx.bezierCurveTo(rootone, 500, roottwo, 500, 1000, 1000);
 ctx.stroke();
 
 })
