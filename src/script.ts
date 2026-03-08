@@ -53,8 +53,8 @@ form?.addEventListener("submit", (event) => {
     } else {
         let theta = (1 / 3) * (Math.acos((-1 * q) / 2 * (Math.cbrt(-1 * ((q / 3) * (q / 3) * (q / 3))))));
         rootone = (Math.cbrt(((-1 * q) / 2) + (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) + (Math.cbrt(((-1 * q) / 2) - (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) - (b / 3 * a);
-        roottwo = (p * (Math.sqrt((-1 * p) / 3))) * Math.cos(theta);
-        rootthree = (p * (Math.sqrt((-1 * p) / 3))) * Math.cos(theta + ((Math.PI * 2) / 3));
+        roottwo = (2 * (Math.sqrt((-1 * p) / 3))) * Math.cos(theta);
+        rootthree = (2 * (Math.sqrt((-1 * p) / 3))) * Math.cos(theta + ((Math.PI * 2) / 3));
         // let rootthr = (p*(Math.sqrt((-1*p)/3)))*Math.cos(theta+((Math.PI*4)/3));
         //cube root unity
 
@@ -69,20 +69,6 @@ form?.addEventListener("submit", (event) => {
         console.log(a);
     }
 
-    // }
-    // }
-    // (document.getElementById("rootone") as HTMLInputElement).value = 'x=${rootone}';
-    // (document.getElementById("roottwo") as HTMLInputElement).value = 'x=${roottwo}';
-    // (document.getElementById("rootthree") as HTMLInputElement).value = 'x=${rootthree}';
-    // (document.getElementById("p") as HTMLInputElement).value = 'x=${p}';
-    // (document.getElementById("q") as HTMLInputElement).value = 'x=${q}';
-    // (document.getElementById("dis") as HTMLInputElement).value = 'x=${dis}';
-    // console.log("no refesh :O");
-
-    // const canvas = document.getElementById("graph");
-// const ctx = canvas.getContext("2d");
-
-// const graph = document.createElement("graph");
 const graph = document.getElementById("graph") as HTMLCanvasElement;
 const ctx = graph.getContext('2d');
 
@@ -91,9 +77,23 @@ if (!ctx) {
   return; // googled answer
 }
 
+let x1: number;
+let x2: number;
+let y1: number;
+let y2: number;
+
+
+x1 = ((((-2*b)+(Math.sqrt(((4*b*b)-(12*a*c))))))/6*a);
+x2 = ((((-2*b)-(Math.sqrt(((4*b*b)-(12*a*c))))))/6*a);
+
+y1 = (((a*x1*x1*x1)+(b*x1*x1)+(c*x1)+d));
+y2 = (((a*x2*x2*x2)+(b*x2*x2)+(c*x2)+d));
+
+
 ctx.beginPath();
 ctx.moveTo(0, 0);
-ctx.bezierCurveTo(rootone, 500, roottwo, 500, 1000, 1000);
+ctx.bezierCurveTo(rootone, 250, x1, y1, roottwo, 250);
+ctx.bezierCurveTo(roottwo, 250, x2, y2, rootthree, 250);
 ctx.stroke();
 
 })
