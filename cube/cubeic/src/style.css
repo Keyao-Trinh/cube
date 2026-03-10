@@ -1,6 +1,4 @@
-*{
 
-}
 title{
   font-family: 'Times New Roman', Times, serif;
   cursor: grab;
@@ -30,6 +28,10 @@ background-color: orange;
 height: 55px;
 width: 105px;
 border-radius: 5px;
+}
+#graph{
+  top: 100px;
+  left: 1000px;
 }
 
 
