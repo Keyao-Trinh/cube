@@ -24,6 +24,7 @@ form?.addEventListener("submit", (event) => {
     const dis: number = (((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)));
     let disvaule = document.getElementById("dis") as HTMLElement;
     disvaule.innerText = String(dis);
+
     if (dis == 0) {
         if (p == 0) {
             rootone = (Math.cbrt(((-1 * q) / 2) + (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) + (Math.cbrt(((-1 * q) / 2) - (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) - (b / 3 * a);
@@ -52,11 +53,15 @@ form?.addEventListener("submit", (event) => {
         }
         // let x = (Math.cbrt(((-1 * q) / 2) + (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) + (Math.cbrt(((-1 * q) / 2) - (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) - (b / 3 * a);
     } else {
-        let theta = (1 / 3) * (Math.acos((-1 * q) / 2 * (Math.cbrt(-1 * ((q / 3) * (q / 3) * (q / 3))))));
-        rootone = (Math.cbrt(((-1 * q) / 2) + (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) + (Math.cbrt(((-1 * q) / 2) - (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) - (b / 3 * a);
-        roottwo = (2 * (Math.sqrt((-1 * p) / 3))) * Math.cos(theta);
-        rootthree = (2 * (Math.sqrt((-1 * p) / 3))) * Math.cos(theta + ((Math.PI * 2) / 3));
-        // let rootthr = (p*(Math.sqrt((-1*p)/3)))*Math.cos(theta+((Math.PI*4)/3));
+        let theta = ((1 / 3) * (Math.acos((-q) / (2 *(Math.sqrt(-1*(p / 3) * (p/ 3) * (p / 3)))))));
+       
+        // rootone = (Math.cbrt(((-1 * q) / 2) + (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) + (Math.cbrt(((-1 * q) / 2) - (Math.sqrt(((q / 2) * (q / 2)) + ((p / 3) * (p / 3) * (p / 3)))))) - (b / 3 * a);
+        roottwo = (((2 * (Math.sqrt(-p / 3))) * Math.cos(theta))-(b/(3*a)));
+        rootthree = (((2 * (Math.sqrt(-p / 3))) * Math.cos(theta+(Math.PI*2)/3))-(b/(3*a)));
+        rootone = (((2 * (Math.sqrt(-p / 3))) * Math.cos(theta+(Math.PI*4)/3))-(b/(3*a)));
+
+        
+        // let rootthr = (2*(Math.sqrt((-1*p)/3)))*Math.cos(theta+((Math.PI*4)/3));
         //cube root unity
 
         let one = document.getElementById("rootone") as HTMLElement;
@@ -82,7 +87,7 @@ form?.addEventListener("submit", (event) => {
     let x2: number;
     let y1: number;
     let y2: number;
-    let plus: number = ((a * 1000));
+    // let plus: number = ((a * 1000));
 
 
     x1 = ((((-2 * b) + (Math.sqrt(((4 * b * b) - (12 * a * c)))))) / 6 * a);
@@ -91,16 +96,16 @@ form?.addEventListener("submit", (event) => {
     y1 = (((a * x1 * x1 * x1) + (b * x1 * x1) + (c * x1) + d));
     y2 = (((a * x2 * x2 * x2) + (b * x2 * x2) + (c * x2) + d));
 
-    if (a > 0) {
-        plus = 500;
-    } else if (a < 0) {
-        plus = -10;
-    } else {
-        plus = 0;
-    }
+    // if (a > 0) {
+    //     plus = 500;
+    // } else if (a < 0) {
+    //     plus = -10;
+    // } else {
+    //     plus = 0;
+    // }
 
     ctx.beginPath();
-    ctx.moveTo(0, plus);
+    ctx.moveTo(0, 0);
     ctx.bezierCurveTo(rootone, 200, x1, y1, roottwo, 200);
     ctx.bezierCurveTo(roottwo, 200, x2, y2, rootthree, 200);
     ctx.stroke();

@@ -4,9 +4,16 @@
   padding: 0;
 }
 
+body{
+  background-color: antiquewhite;
+}
+
 h1{
   top: 10px;
 left : 10px;
+font-family:'Courier New', Courier, monospace;
+cursor: grab;
+
 /* position: absolute; */
 }
 
@@ -18,7 +25,12 @@ title {
 
 label {
   font-family: 'Times New Roman', Times, serif;
+/* color: coral; */
+}
 
+input{
+  background-color: azure;
+  
 }
 
 .submit {
@@ -53,6 +65,7 @@ label {
   top: 100px;
   left: 10px;
   /* position: absolute; */
+  border: 1px solid;
 }
 .form{
   top: 50px;
