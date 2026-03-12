@@ -83,31 +83,16 @@ form?.addEventListener("submit", (event) => {
         return; // googled answer
     }
 
-    let x1: number;
-    let x2: number;
-    let y1: number;
-    let y2: number;
-    // let plus: number = ((a * 1000));
-
-
-    x1 = ((((-2 * b) + (Math.sqrt(((4 * b * b) - (12 * a * c)))))) / 6 * a);
-    x2 = ((((-2 * b) - (Math.sqrt(((4 * b * b) - (12 * a * c)))))) / 6 * a);
-
-    y1 = (((a * x1 * x1 * x1) + (b * x1 * x1) + (c * x1) + d));
-    y2 = (((a * x2 * x2 * x2) + (b * x2 * x2) + (c * x2) + d));
-
-    // if (a > 0) {
-    //     plus = 500;
-    // } else if (a < 0) {
-    //     plus = -10;
-    // } else {
-    //     plus = 0;
-    // }
 
     ctx.beginPath();
     ctx.moveTo(0, 0);
-    ctx.bezierCurveTo(rootone, 200, x1, y1, roottwo, 200);
-    ctx.bezierCurveTo(roottwo, 200, x2, y2, rootthree, 200);
+    let i = -200;
+    let y = 0;
+    while (i<200){
+    y = ((a*i*i*i)+(b*i*i)+(c*i)+d);
+    ctx.lineTo(((i*0.1)+200),((y*0.1)+200));
+    i=(i+0.01);
+    }
     ctx.stroke();
 
 })
