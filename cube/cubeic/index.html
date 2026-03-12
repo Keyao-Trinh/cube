@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href = "src/style.css"></link>
+  <title id="title">cube</title>
+</head>
+
+<body>
+  <h1 id="test">Cubic Solver</h1>
+  <form name="theform" id="form">
+
+
+
+    <label for="a">a-vaule:</label> <input type="number" id="a" name="a" required></input>
+    <br></br>
+    <label for="b">b-vaule:</label> <input type="number" id="b" name="b" required></input>
+    <br></br>
+    <label for="c">c-vaule:</label> <input type="number" id="c" name="c" required></input>
+    <br></br>
+    <label for="d">d-vaule:</label> <input type="number" id="d" name="d" required></input>
+    <br></br>
+    <input type="submit" vaule="Calculate" id="submit"></input>
+
+  </form>
+
+  <br></br>
+
+  <br></br>
+  <table id="table">
+    <tr>
+      <th>p</th>
+      <td id="p" type="number">-</td>
+    </tr>
+    <tr>
+      <th>q</th>
+      <td id="q" type="number">-</td>
+    </tr>
+    <tr>
+      <th>discriminate</th>
+      <td id="dis" type="number">-</td>
+    </tr>
+    <tr>
+      <th>root 1</th>
+      <td id="rootone" type="number">-</td>
+    </tr>
+    <tr>
+      <th>root 2</th>
+      <td id="roottwo" type="number">-</td>
+    </tr>
+    <tr>
+      <th>root 3</th>
+      <td id="rootthree" type="number">-</td>
+    </tr>
+  </table>
+  <canvas id="graph" height="400" width="400"></canvas>
+<!-- tsc -->
+
+  <script src="src/script.ts"></script>
+
+</body>
+
+</html>
